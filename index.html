@@ -13,7 +13,7 @@
         .parallax1 {
             /* The image used */
             /* Full height */
-            height: 500px;
+            height: 100%;
 
             /* Create the parallax scrolling effect */
 
@@ -24,12 +24,11 @@
         .parallax2 {
             /* The image used */
             /* Full height */
-            height: 1080px;
+            height: 100%;
 
             /* Create the parallax scrolling effect */
-            width: 1920px;
             background: url('assets/2.jpg') no-repeat fixed center;
-            background-size: cover;
+            background-size: 100%;
 
         }
         .center {
@@ -69,11 +68,45 @@
             to   { opacity: 1; }
         }
     </style>
+    <script>
+        function isElementInViewport(elem) {
+            var $elem = $(elem);
+
+            // Get the scroll position of the page.
+            var scrollElem = ((navigator.userAgent.toLowerCase().indexOf('webkit') != -1) ? 'body' : 'html');
+            var viewportTop = $(scrollElem).scrollTop();
+            var viewportBottom = viewportTop + $(window).height();
+
+            // Get the position of the element on the page.
+            var elemTop = Math.round( $elem.offset().top );
+            var elemBottom = elemTop + $elem.height();
+
+            return ((elemTop < viewportBottom) && (elemBottom > viewportTop));
+        }
+
+        // Check if it's time to start the animation.
+        function checkAnimation() {
+            var $elem = $('.bar .level');
+
+            // If the animation has already been started
+            if ($elem.hasClass('start')) return;
+
+            if (isElementInViewport($elem)) {
+                // Start the animation
+                $elem.addClass('start');
+            }
+        }
+
+        // Capture scroll events
+        $(window).scroll(function(){
+            checkAnimation();
+        });
+    </script>
 </head>
 <body>
 <div class="parallax1"></div>
 
-<div style="background-color:whitesmoke;font-size:36px">
+<div style="background-color:whitesmoke;font-size:36px height: 100%;">
     <div class="center" style="padding: 30px; font-family: 'El Messiri', sans-serif; font-size: 50px;">
         MEET LAKSMIANI DEWI
     </div>
@@ -82,11 +115,11 @@
 </div>
 
 <div class="parallax2"></div>
-<div style="background-color:whitesmoke;font-size:36px">
+<div style="background-color:whitesmoke;font-size:36px height: 100%;">
     <div class="center" style="padding: 20px; font-family: 'El Messiri', sans-serif; font-size: 50px;">
         Apakah kamu suka sama Arya?
     </div>
-    <div style="text-align: center;"><a href="ch1.html" class="btn btn-default" role="button">YA</a></div>
+    <div style="text-align: center;"><a href="inde.html" class="btn btn-default" role="button">YA</a></div>
     <div class="center" style="padding: 30px; font-family: 'El Messiri', sans-serif; font-size: 30px;">
        (Tidak menerima jawaban "tidak" wqwq)
 </div>
