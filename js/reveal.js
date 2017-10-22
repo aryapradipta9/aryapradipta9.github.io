@@ -2774,7 +2774,7 @@
 
 		//}
 		/*DELETEIDX*/
-        if ((indexh !== 2) && (indexh !== 1) && (indexh !== 3) && (indexh !== 4) && (indexh !== 5) && (indexh !== 21) && (indexh !== 34)) {
+        if ((indexh !== 0) && (indexh !== 1) && (indexh !== 2) && (indexh !== 4) && (indexh !== 5) && (indexh !== 21) && (indexh !== 34)) {
 			parent_temp.appendChild(savenode);
         }
 
