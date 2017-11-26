@@ -1,0 +1,26 @@
+<html>
+    <head>
+            </head>
+    <body>
+        Lampu <input type="text" value="0" id="lampu">
+
+        <br>
+        Total kwh = <span id="res"></span>
+        <br>
+        Energi anda cukup untuk <span id="total"></span> orang di indonesia
+        <script>
+            function calc() {
+                var lampu = document.getElementById("lampu").value;
+                res.innerHTML = lampu * 30;
+                var tot = lampu * 30;
+                var total = document.getElementById("total");
+                total.innerHTML = 234000000000000 /  tot;
+            }
+            var res = document.getElementById("res");
+            lampu.addEventListener('change',calc);
+                
+            
+
+        </script>
+            </body>
+</html>
